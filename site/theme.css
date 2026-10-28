@@ -29,3 +29,12 @@ body main>footer:not(.copyright-mark){display:flex;align-items:center;justify-co
 .visitor-counter #visitor-count{display:inline-flex;align-items:center;gap:2px;position:relative;min-height:21px}
 .visitor-counter img.visitor-digit{display:block;width:18px;height:21px;max-width:none;margin:0;image-rendering:pixelated}
 .visitor-counter .visitor-count-text{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Give the hero description the full available card width. */
+.home-hero p{width:max-content;max-width:calc(100vw - 176px)}
+@media(max-width:520px){.home-hero p{width:auto;max-width:100%}}
+
+.version-mark{text-align:right;color:#947348;font-size:12px;line-height:1.6;margin-top:14px;letter-spacing:.2px}
+
+footer.copyright-mark{position:relative}.copyright-mark .version-mark{position:absolute;right:0;top:calc(50% + 10px);transform:translateY(-50%);margin:0}
+@media(max-width:600px){footer.copyright-mark{justify-content:flex-start;gap:6px}.copyright-mark .version-mark{font-size:9px}footer.copyright-mark .copyright-text{font-size:9px}footer.copyright-mark img{width:30px;height:30px}}
