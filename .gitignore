@@ -1,0 +1,9 @@
+node_modules/
+.wrangler/
+.local-data/
+.dev.vars
+.env
+.env.*
+backups/
+*.sqlite3
+*.xlsx
