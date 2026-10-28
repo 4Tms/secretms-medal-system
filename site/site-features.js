@@ -13,7 +13,17 @@
       if(cloud&&method==='POST'){options.headers={'Content-Type':'application/json'};options.body=JSON.stringify({visitorId});}
       if(!cloud)options.credentials='same-origin';
       const response=await fetch(window.medalsApi('/api/visits'),options);if(!response.ok)throw Error('Unavailable');
-      const data=await response.json();if(!Number.isSafeInteger(data.visitors))throw Error('Invalid count');count.textContent=data.visitors.toLocaleString('zh-TW');
+      const data=await response.json();
+      const preview=new URLSearchParams(location.search).get('preview-visitors');
+      if(['127.0.0.1','localhost'].includes(location.hostname)&&preview!==null&&/^\d+$/.test(preview))data.visitors=Number(preview);
+      if(!Number.isSafeInteger(data.visitors)||data.visitors<0)throw Error('Invalid count');
+      const digits=String(data.visitors),text=document.createElement('span');
+      text.className='visitor-count-text';text.textContent=digits;text.setAttribute('aria-hidden','true');
+      count.setAttribute('role','img');count.setAttribute('aria-label',data.visitors.toLocaleString('zh-TW'));count.replaceChildren(text);
+      for(const digit of digits){
+        const image=document.createElement('img');image.className='visitor-digit';image.src=`assets/UI/Num (${digit}).png`;
+        image.alt='';image.setAttribute('aria-hidden','true');image.width=18;image.height=21;count.append(image);
+      }
       if(cloud&&method==='POST')try{localStorage.setItem('medals-visitor-seen',String(Date.now()));}catch{}
     }
     if(location.protocol==='file:')count.textContent='請透過本機服務查看';
