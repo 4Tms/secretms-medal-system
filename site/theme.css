@@ -38,3 +38,11 @@ body main>footer:not(.copyright-mark){display:flex;align-items:center;justify-co
 
 footer.copyright-mark{position:relative}.copyright-mark .version-mark{position:absolute;right:0;top:calc(50% + 10px);transform:translateY(-50%);margin:0}
 @media(max-width:600px){footer.copyright-mark{justify-content:flex-start;gap:6px}.copyright-mark .version-mark{font-size:9px}footer.copyright-mark .copyright-text{font-size:9px}footer.copyright-mark img{width:30px;height:30px}}
+
+@media(min-width:761px) and (max-width:1100px){.overview-top{flex-wrap:nowrap;gap:12px}.overview-top .brand{font-size:18px;letter-spacing:0;white-space:nowrap}.overview-top .page-nav{width:auto;flex-wrap:nowrap;margin-left:auto;gap:2px}.overview-top .page-nav a{font-size:13px;padding:9px 8px}}
+
+.overview-page .table-wrap table{table-layout:fixed;width:100%;min-width:0}
+.overview-page .table-wrap th,.overview-page .table-wrap td{min-width:0;max-width:none;white-space:normal;overflow-wrap:anywhere;padding:12px 6px;text-align:center;vertical-align:middle}
+.overview-page .table-wrap th:nth-child(1){width:6%}.overview-page .table-wrap th:nth-child(2){width:15%}.overview-page .table-wrap th:nth-child(3){width:29%}.overview-page .table-wrap th:nth-child(4),.overview-page .table-wrap th:nth-child(5){width:7%}.overview-page .table-wrap th:nth-child(6),.overview-page .table-wrap th:nth-child(7){width:8%}.overview-page .table-wrap th:nth-child(8){width:20%}
+.overview-abilities span{display:block}.overview-abilities .ability-bonus{font-weight:800;color:#996b0c}
+@media(max-width:850px){.overview-page .table-wrap table{font-size:12px}.overview-page .table-wrap th,.overview-page .table-wrap td{padding:10px 3px;letter-spacing:0}.overview-page .medal-picture img{max-width:100%;height:auto}}
