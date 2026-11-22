@@ -60,3 +60,6 @@
 /* All podium portraits, including the fallback, use the same natural-size scale. */
 .podium-person img{width:auto;height:auto;max-width:none;zoom:1.25}
 @media(max-width:520px){.podium-person img{zoom:1}}
+
+.ranking-pagination{flex-wrap:wrap;gap:10px 14px}.ranking-jump{display:flex;align-items:center;justify-content:center;gap:8px;margin:0}.ranking-jump input{flex:none;width:76px;min-width:0;max-width:100%;padding:9px 8px;text-align:center}.ranking-jump label,.ranking-jump>span{white-space:nowrap;font-size:14px;color:#80613b}
+@media(max-width:600px){.ranking-pagination{gap:10px 8px}.ranking-pagination button{padding:9px 12px}.ranking-jump{flex-basis:100%;margin-top:4px}}
